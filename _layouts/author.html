@@ -1,0 +1,37 @@
+---
+layout: default
+template: author
+sidebar_option: no-sidebar
+---
+
+{% assign author_posts = site.posts | where: 'author_id', page.author_id %}
+<!--/// Blog Area /// -->
+<div class="author-area">
+    <div class="unang-page-title-area py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                    <div class="author-name-full mb-2">
+					<img class="avata-big rounded-circle"
+                            src="{{page.image | relative_url}}" alt="{[page.name]}" style="width:75px;" />
+                        <div class="author-bio-content">
+                            <h2>{{page.name}}</h2>
+                            {% if page.bio %}
+                                <p>{{page.bio}} </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                            <label>FOLLOW ME</label>
+                    <ul class="list-inline m-0">
+
+                        <li class="list-inline-item"><a class="btn btn-primary btn-sm btn-fc text-light" href="{{page.facebook | relative_url}}"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li class="list-inline-item"><a class="btn btn-info btn-sm btn-twi text-light" href="{{page.twitter | relative_url}}"><i class="fab fa-twitter"></i> Tweeter</a></li>
+                        <li class="list-inline-item"><a class="btn btn-danger btn-sm text-light" href="{{page.pinterest | relative_url}}"><i class="fab fa-pinterest"></i> Pin it</a></li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+  </div>
+                    {% for post in author_posts %}
+                            {% include item_post.html %}
+                    {% endfor %}
+                {% include pagination.html %}

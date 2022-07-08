@@ -1,0 +1,77 @@
+.posts {
+        width: 100%;
+        grid-gap: 15px;
+        margin: auto;
+    .post {
+            width: 380px;
+            margin-bottom: 26px;
+    @include mobile {
+                     width: 100%;
+                     margin-bottom: 13px;}
+        .img_thumbnail {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 200px;
+                }
+            .blog_post {
+                overflow: hidden;
+            }
+       }
+}
+.laman_awal {
+        .post:nth-child(1) {width: 758px;
+        .img_thumbnail {height: 304px;
+@include mobile{height: 200px;}}
+
+        .card-body {position: absolute;
+                    bottom: 0;
+                    background: #3e3b3b82;
+                    margin: 5px;
+                    border-radius: 8px;
+                    color: #fff;
+@include mobile{
+    position: relative;
+    background: none;
+    margin: 5px;
+    border-radius: 8px;
+    color: inherit;
+a{color: #3f51b5;}}}
+
+a{color: #e1e1e1;}
+}
+.post:nth-child(2), 
+.post:nth-child(3) {
+height: fit-content;
+@include mobile{
+    height: auto;}
+
+.blog_post {display: inline-flex;
+            flex-direction: row;
+            align-items: flex-start;
+            height: 135px;
+@include mobile{
+    display: block;
+    flex-direction: unset;
+    align-items: unset;
+    height: auto;}
+
+.img_thumbnail {width: 40%;
+                height: 100%;
+@include mobile{
+    width: 100%;
+    height: 200px;}}
+}
+.title {font-size: 15px;}
+.entry {font-size: 13px;}
+}
+
+.post:nth-child(3) {
+    position: absolute;
+    right: 106px;
+    bottom: 243px;
+@include mobile{
+    position: unset;
+    right: unset;
+    bottom: unset;}}
+}

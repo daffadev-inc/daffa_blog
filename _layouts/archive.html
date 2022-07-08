@@ -1,0 +1,22 @@
+---
+layout: default
+title: Archive
+sidebar_option: no-sidebar
+---
+
+<div class="post_archive">
+<h5 class="mb-3"><span>{{ page.type }} : {{ page.title }}</span></h5>
+
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+
+{% for post in page.posts %}
+
+{% include item_post.html %}
+
+{% endfor %}
+
+</div>
+    <div class="col-md-12 py-2 my-2 d-flex justify-content-center">
+      <a class="btn btn-sm btn-dark" href="{{site.baseurl}}/" role="button">Beranda</a>
+    </div>
+</div>

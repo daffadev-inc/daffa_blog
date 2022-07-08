@@ -1,0 +1,70 @@
+<div class="footerbar">
+    <div class="container">
+        <div class="footer-copyright" id="footer-copyright">
+            <div class="copyright-text">©️{{ site.time | date: '%Y' }} | Template by -<a href="{{site.url}}"> <span id="unangning_eu" title="unangning_eu">{{site.author}}</span></a> | Powered by <a href="https://github.com" rel="dofollow" target="_blank" title="Github Templates">Github</a></div>
+            </div>
+            <div class="footer-menu section" id="footer-menu" name="Footer Menu">
+                <div class="widget LinkList" data-version="2" id="LinkList155">
+                    <div class="widget-content">
+                        <ul class="link-list">
+                        <li><a href="{{site.baseurl}}">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="https://github.com/">Fork <i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<style>
+.footerbar {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 58px;
+    background-color: var(--footerbar-bg);
+    color: var(--footerbar-color);
+    line-height: 58px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.footerbar .footer-copyright {
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+#footer-menu {
+    float: right;
+    position: relative;
+    display: block;
+    margin: 0;
+}
+.link-list {
+    display: flex;
+    list-style: none;
+    grid-gap: 0 30px;
+}
+@media (max-width: 768px) {
+.footerbar {
+    height: auto;
+    line-height: inherit;
+    padding: 25px 0;
+    margin: 0;
+    }
+.footerbar .footer-copyright {
+    font-size: 13px;
+    opacity: .85;
+    }
+.footerbar .footer-copyright, #footer-menu {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    }
+.link-list {
+    display: none;
+}
+}
+</style>

@@ -1,0 +1,83 @@
+title: DaffaDev
+description: Blog from Nowhere
+author: Unang
+avatar: /assets/logo/gif.webp
+
+disqus:
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-102169339-1
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: https://daffadev.my.id
+
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+permalink: /:title/
+paginate: 6
+paginate_path: "/page-:num/"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+# Sass Folder
+sass:
+    sass_dir: /assets/_sass
+    style: compressed
+
+# Use the following plug-ins
+plugins:
+  - jekyll-minify-html
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-figure
+
+# Custom Collections
+collections:
+  products:
+    output: true
+  authors:
+    output: true
+
+# Collection Defaults
+defaults:
+- scope:
+    type: posts
+  values:
+    layout: post
+- scope:
+    type: pages
+  values:
+    layout: page
+- scope:
+    type: products
+  values:
+    layout: product
+
+# Frontmatter Defaults
+sidebar_options:
+  - sidebar
+  - no-sidebar
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    tags: '/tag/:name/'
+
+compress_html:
+  clippings: all
+    
+exclude: [lib, config.rb, .sass-cache, Capfile, config, log, Rakefile, Rakefile.rb, tmp, Gemfile, Gemfile.lock, README.md, LICENSE.md, node_modules, gulpfile.js, package.json, package-lock.json]

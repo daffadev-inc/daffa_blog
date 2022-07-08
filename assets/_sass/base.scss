@@ -1,0 +1,48 @@
+$primary: #3F51B5;
+$enable-shadows: true;
+$prefix: "mo-";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "custom/variables";
+@import "custom/laman_awal";
+@import "custom/archive";
+@import "custom/unang_page";
+
+body {
+  --bs-body-font-family: var(--bs-font-monospace);
+  --bs-body-line-height: 1.4;
+  --bs-body-bg: var(--bs-gray-100);
+}
+
+.table {
+  --bs-table-color: var(--bs-gray-600);
+  --bs-table-bg: var(--bs-gray-100);
+  --bs-table-border-color: transparent;
+}
+
+a {
+    text-decoration: none;
+ &:hover {
+    text-decoration: underline;}
+}
+
+img {
+    width: 100%;
+    margin: auto;
+}
+
+#main {
+    margin-top: 20px;
+}
+
+pre {
+    padding: 10px;
+    line-height: 1;
+    border: 1px solid #666;
+    border-radius: 8px;
+    overflow: auto;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 100%;
+}

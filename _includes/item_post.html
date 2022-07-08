@@ -1,0 +1,14 @@
+    
+    <article class="animate__animated card post animate__bounceIn">
+        <img src="{{post.post_image}}" class="img_thumbnail" alt="{{post.title}}" />
+    <div class="card-body">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+      <div class="title">
+      <span>{{ post.title }}</span>
+      </div>
+      </a>
+      <div class="entry">
+        {{ post.excerpt | strip_html | truncatewords:10 }}
+      </div>
+    </div>
+    </article>

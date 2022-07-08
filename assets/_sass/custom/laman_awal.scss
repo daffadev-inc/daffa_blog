@@ -1,0 +1,68 @@
+
+.laman_awal .posts .grid:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1em;
+    padding: 0;
+
+    @include mobile {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+.card-body {
+    position: absolute;
+    bottom: 0;
+    background: #ffffff8a;
+    width: 100%;
+
+    @include mobile {
+        position:relative;}
+    }
+}
+
+.laman_awal .grid:nth-child(1) {
+    .post .img_thumbnail{
+    box-shadow: 0 0 10px -3px #666;
+    object-fit:cover;
+    height:463px;
+    width:100%;
+    object-position:top;
+
+    @include mobile {
+    height: 200px;}
+    }
+}
+
+.laman_awal .grid:nth-child(2),
+.laman_awal .grid:nth-child(3),
+.laman_awal .grid:nth-child(4) {
+height: fit-content;
+@include mobile{
+    height: auto;}
+
+.post {display: inline-flex;
+            flex-direction: row;
+            align-items: flex-start;
+            height: 135px;
+@include mobile{
+    display: block;
+    flex-direction: unset;
+    align-items: unset;
+    height: auto;}
+
+.img_thumbnail {width: 40%;
+                height: 100%;
+@include mobile{
+    width: 100%;
+    height: 200px;}}
+}
+.title {font-size: 15px;}
+.entry {font-size: 13px;}
+}
+
