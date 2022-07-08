@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Begin Jekyll SEO tag v2.8.0 --><title>Membersihkan Sistem Linux | DaffaDev</title><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="Membersihkan Sistem Linux" /><meta name="author" content="Unang" /><meta property="og:locale" content="en_US" /><meta name="description" content="Merasa sistem linux kamu terasa lebih berat? Kernel yang bertumpuk" /><meta property="og:description" content="Merasa sistem linux kamu terasa lebih berat? Kernel yang bertumpuk" /><link rel="canonical" href="http://localhost:4000/Membersihkan-Sistem-Linux-Mint-Dengan-Script/" /><meta property="og:url" content="http://localhost:4000/Membersihkan-Sistem-Linux-Mint-Dengan-Script/" /><meta property="og:site_name" content="DaffaDev" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-08-18T09:14:30+07:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Membersihkan Sistem Linux" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Unang"},"dateModified":"2021-08-18T09:14:30+07:00","datePublished":"2021-08-18T09:14:30+07:00","description":"Merasa sistem linux kamu terasa lebih berat? Kernel yang bertumpuk","headline":"Membersihkan Sistem Linux","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Membersihkan-Sistem-Linux-Mint-Dengan-Script/"},"url":"http://localhost:4000/Membersihkan-Sistem-Linux-Mint-Dengan-Script/"}</script> <!-- End Jekyll SEO tag --> <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/icons/css/all.min.css"><link rel="alternate" type="application/rss+xml" title=" - Blog from Nowhere" href="/feed.xml" /> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1171588080744378" crossorigin="anonymous"></script> <script type='application/ld+json'>{"@context":"http://schema.org","@type":"WebSite","name":"DaffaDev","url":"http://localhost:4000","potentialAction":{"@type":"SearchAction","target":"http://localhost:4000/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script> <!-- Created with Jekyll --></head><body itemscope itemtype="http://schema.org/WebPage"><nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark"><div class="container-fluid"> <a class="navbar-brand" href="/"><img class="icon_header" src="/assets/logo/gif.webp" alt="" width="24" height="24">DaffaDev</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul><form class="d-flex" role="search"> <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-primary" type="submit">Cari</button> </form></div></div></nav><div id="main" role="main" class="container "><div class="posts post_sidebar "><article class="post_body shadow-sm mb-3"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/category/tutorial/">Tutorial</a></li><li class="breadcrumb-item active" aria-current="page">Membersihkan Sistem Linux</li></ol></nav><h2 class="post_title">Membersihkan Sistem Linux</h2><div class="row mb-3 mt-3"><div class="col-md-4 col-lg-3"><div class="author-name-full justify-content-start d-flex"> <img class="avatar rounded-circle" src="/assets/logo/ava.png" alt="author image" style="width:20%;margin:8px !important;" /><div class="ps-2 d-flex align-items-start justify-content-center flex-column"> <a href="/authors/unang/"><strong>UnanG</strong></a><p class="small mb-0">on Aug 18, 2021</p></div></div></div></div><div class="entry"><p>Merasa sistem linux kamu terasa lebih berat? Kernel yang bertumpuk<!--more--> setelah kamu meng-upgrade kernel beberapa kali saat bootloader berjalan seperti gambar di samping? Atau free space pada sistem kamu terasa lebih kecil dari seharusnya? Itu bertkamu bahwa sistem kamu masih menyimpan “sampah”. Segera bersihkan sistem kamu! Bagaimana caranya?</p><p>Sebenarnya apa sih maksudnya file sampah? Maksudnya adalah file-file yang tidak digunakan dalam sistem. Beberapa aplikasi akan menyimpan data tambahan untuk digunakan kemudian atau sebagai backup. Namun jika kamu sudah merasa nyaman dengan yang ada, atau tidak menggunakannya lagi, file-file tersebut akan terus menumpuk dan memakan memory kamu atau bahkan bisa mengurangi efisiensi sistem kamu. Jika kamu seorang geek yang suka meng-install dan meng-uninstall aplikasi akan lebih banyak file sampah yang dihasilkan. Sehingga melakukan pembersihan (Cleaning) diperlukan untuk menjaga sistem kamu lebih optimal dan memperbesar free space dalam hardisk kamu.</p><p>File-file sampah tersebut dapat berupa :</p><p>-Cache dan history dari aplikasi -File Temporary -File backup -File dalam Trash -Paket orphans (tidak digunakan) -Konfigurasi tak terpakai -Kernel lama Banyak pengguna linux yang merekomendasikan Bleachbit sebagai cleaning tools dalam sistem linux. Namun sayangnya Bleachbit tidak dapat menghapus paket orphans, konfigurasi tak terpakai, dan kernel lama. Terutama untuk kernel lama, bukan hanya memperbesar penggunaan hardisk saja. Kernel lama yang sudah tidak pernah kamu gunakan dapat bertumpuk pada bootloader. Ini tentu membuat bootloader terlihat kurang rapi.</p><p>Untuk konfigurasi tak terpakai bisa kamu hapus melalui perintah apt. Tapi apa kamu tahu file tersebut apa saja? Berapa banyak kernel yang kamu simpan? Mau ketik nama konfigurasi dan kernel satu persatu?</p><p>Nah! Di sini saya memberikan script sederhana untuk mengatasi masalah tersebut. Script ini berasal dari sini dan dapat menghapus cache dari apt, konfigurasi lama, dan kernel lama. Berikut script tersebut :</p><pre>
+
+#!/bin/bash
+
+
+OLDCONF=$(dpkg -l|grep "^rc"|awk '{print $2}')
+
+CURKERNEL=$(uname -r|sed 's/-*[a-z]//g'|sed 's/-386//g')
+
+LINUXPKG="linux-(image|headers|ubuntu-modules|restricted-modules)"
+
+METALINUXPKG="linux-(image|headers|restricted-modules)-(generic|i386|server|common|rt|xen)"
+
+OLDKERNELS=$(dpkg -l|awk '{print $2}'|grep -E $LINUXPKG |grep -vE $METALINUXPKG|grep -v $CURKERNEL)
+
+YELLOW="\033[1;33m"
+
+RED="\033[0;31m"
+
+ENDCOLOR="\033[0m"
+
+
+if [ $USER != root ]; then
+
+echo -e $RED"Error: must be root"
+
+echo -e $YELLOW"Exiting..."$ENDCOLOR
+
+exit 0
+
+fi
+
+
+echo -e $YELLOW"Cleaning apt cache..."$ENDCOLOR
+
+aptitude clean
+
+
+echo -e $YELLOW"Removing old config files..."$ENDCOLOR
+
+sudo aptitude purge $OLDCONF
+
+
+echo -e $YELLOW"Removing old kernels..."$ENDCOLOR
+
+sudo aptitude purge $OLDKERNELS
+
+
+echo -e $YELLOW"Emptying every trashes..."$ENDCOLOR
+
+rm -rf /home/*/.local/share/Trash/*/** &amp;&gt; /dev/null
+
+rm -rf /root/.local/share/Trash/*/** &amp;&gt; /dev/null
+
+
+echo -e $YELLOW"Script Finished!"$ENDCOLOR
+
+</pre><p>Nah! untuk menggunakannya copy-paste script ini melalui text editor kesayangan kamu semisal Gedit, lalu simpan ke dalam home folder kamu dengan nama mintcleaner.sh (Sebenarnya nama bisa sesuka kamu, asalkan extensinya tetap .sh).</p><p>Lalu buka terminal, dan jalankan perintah</p><pre>sudo chmod +x mintcleaner.sh</pre><p>Sekarang script sudah siap kamu pakai! Untuk menjalankan script tersebut gunakan perintah</p><pre>sudo sh mintcleaner.sh</pre><p>Menurutku, script ini juga bisa digunakan untuk distro Ubuntu dan derivatifnya.</p></div><small class="date"> Posted on 18 Aug 2021 </small></article><div class="sidebar_post"> <span class="entry-categories shadow-sm mb-3">Filed Under: <a href="/category/tutorial/" rel="category">tutorial</a> </span> <span class="entry-tags shadow-sm mb-3">Tagged With: <a href="/tag/linux/" rel="tag">linux</a> </span><div class="animate__animated adsense_content animate__slideInUp"> <ins class="adsbygoogle ads-here" style="display:block" data-ad-client="ca-pub-1171588080744378" data-ad-slot="8699873320" data-ad-format="auto" data-full-width-responsive="true"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div></div></div></div><div class="container"></div><footer class="footer"><div class="footerbar"><div class="container"><div class="footer-copyright" id="footer-copyright"><div class="copyright-text">©️2022 | Template by -<a href=""> <span id="unangning_eu" title="unangning_eu">Unang</span></a> | Powered by <a href="https://github.com" rel="dofollow" target="_blank" title="Github Templates">Github</a></div></div><div class="footer-menu section" id="footer-menu" name="Footer Menu"><div class="widget LinkList" data-version="2" id="LinkList155"><div class="widget-content"><ul class="link-list"><li><a href="/">Home</a></li><li><a href="#">About</a></li><li><a href="#">Contact Us</a></li><li><a href="https://github.com/daffadev-inc/daffa_blog">Fork <i class="fab fa-github"></i></a></li></ul></div></div></div></div></div><style> .footerbar { position: relative; float: left; width: 100%; height: 58px; background-color: var(--footerbar-bg); color: var(--footerbar-color); line-height: 58px; overflow: hidden; padding: 0; margin: 0; } .footerbar .footer-copyright { float: left; font-size: 14px; font-weight: 400; margin: 0; } #footer-menu { float: right; position: relative; display: block; margin: 0; } .link-list { display: flex; list-style: none; grid-gap: 0 30px; } @media (max-width: 768px) { .footerbar { height: auto; line-height: inherit; padding: 25px 0; margin: 0; } .footerbar .footer-copyright { font-size: 13px; opacity: .85; } .footerbar .footer-copyright, #footer-menu { width: 100%; text-align: center; margin: 0; } .link-list { display: none; } }</style></footer><script src="/assets/js/bootstrap/dist/bootstrap.bundle.min.js"></script> <script src="/assets/js/popper/umd/popper.min.js"></script> <!-- Google Analytics --> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-102169339-1', 'auto'); ga('send', 'pageview', { 'page': '/Membersihkan-Sistem-Linux-Mint-Dengan-Script/', 'title': 'Membersihkan Sistem Linux' }); </script> <!-- End Google Analytics --></body></html>

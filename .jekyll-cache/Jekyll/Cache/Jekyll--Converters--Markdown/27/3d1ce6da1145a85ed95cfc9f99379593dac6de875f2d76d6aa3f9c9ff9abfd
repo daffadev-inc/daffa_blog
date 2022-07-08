@@ -1,0 +1,109 @@
+I"<p>Jadi bagaimana jika kita ingin membuat peretasan bekerja di<!--more--> mana saja di dunia. Apa yang dapat kita lakukan untuk membuat peretasan global sehingga kita dapat meretas siapa pun melalui internet tanpa membeli server yang mahal?</p>
+
+<p>Postingan ini lanjutan dari <a href="https://daffadev.my.id/Meretas-ponsel-Android-dari-jarak-jauh-menggunakan-Metasploit">- Hack ponsel Android dari jarak jauh</a>, Wajib baca dahulu postingan awal, sebelum melanjutkan langkah-langkah dibawah.
+<br /></p>
+<h2 id="langkah-1">Langkah 1:</h2>
+<p>Kita membutuhkan router yang dapat melakukan fitur port forwarding. Ini adalah suatu keharusan untuk meretas internet dengan Metasploit.</p>
+
+<p><br /></p>
+<h2 id="langkah-2">Langkah 2:</h2>
+<p>Selanjutnya, kita memerlukan IP dinamis untuk msfvenom dan Metasploit agar dapat bekerja melalui internet, jadi buka <a href="https://noip.com">noip.com</a> dan daftar.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-256-min-1024x341.jpg" alt="kali" /></p>
+
+<p>Klik Add Host dan masukkan nama apa saja untuk host tersebut. Klik simpan host.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-263-min-1024x460.jpg" alt="kali-linix" /></p>
+
+<p><br /></p>
+<h2 id="langkah-3">Langkah 3:</h2>
+<p>Sekarang Unduh DUC dari situs web resmi atau <a href="https://www.noip.com/download">klik di sini</a>. Instal klien DUC dan masuk ke akun Anda. Setelah Anda melakukan alamat IP untuk sistem Anda secara otomatis akan diperbarui dalam DNS. Jika ini tidak terjadi, Anda dapat mengkonfigurasi DNS secara manual.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-262-min.jpg" alt="noip" /></p>
+
+<p><br /></p>
+<h2 id="langkah-4">Langkah 4:</h2>
+<p>Klik tambahkan host pada klien DUC seperti yang ditunjukkan. Jika dilakukan dengan benar, Anda akan mendapatkan ketiga centang hijau.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-257-min.jpg" alt="noip" /></p>
+
+<p>Set host yang sebenarnya.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-258-min.jpg" alt="noip" /></p>
+
+<p>Semua pengaturan sudah diatur.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-259-min.jpg" alt="noip" /></p>
+
+<p><br /></p>
+<h2 id="langkah-5">Langkah 5:</h2>
+<p>Sekarang, kita memerlukan IP gateway untuk port forward dari pengaturan router kita. Jadi ketik <b>“ifconfig”</b> di command prompt, dan Anda akan mendapatkan IP gateway.</p>
+
+<p><br /></p>
+<h2 id="langkah-6">Langkah 6:</h2>
+<p>Sekarang buka browser apa pun yang Anda miliki dan rekatkan IP gateway di sana. Ini akan meminta halaman login. Masukkan nama pengguna dan kata sandi router Anda (secara default keduanya adalah admin untuk sebagian besar router).</p>
+
+<h2 id="langkah-8">Langkah 8:</h2>
+<p>Sekarang arahkan ke opsi penerusan porta. Tergantung pada merek router, halaman mungkin berada di lokasi yang berbeda, tetapi prinsip dasarnya sama.</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/06/Screenshot-46.png" alt="noip" /></p>
+
+<p><br /></p>
+<h2 id="langkah-9">Langkah 9:</h2>
+<p>Klik Add Port dan beri nilai Add port 2222 lagi dan simpan. Anda dapat memasukkan nomor port yang Anda inginkan.</p>
+
+<p><br /></p>
+<h2 id="langkah-10">Langkah 10:</h2>
+<p>Sekarang, saat mengatur dua perintah alih-alih IP lokal saya, gunakan ddns yang baru saja Anda buat tanpa IP.</p>
+
+<p>Jadi dalam kasus saya, itu akan menjadi nightfury007.dns.net bukannya 192.168.78.129</p>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/06/m1.jpg" alt="noip" /></p>
+
+<p>Kamu juga akan menemukan beberapa perintah jaringan termasuk portfwd dan route
+<img src="https://myhackingworld.com/wp-content/uploads/2019/06/m5.jpg" alt="noip" /></p>
+
+<p><br /></p>
+<h2 id="langkah-11">Langkah 11:</h2>
+<p>Sekarang, sisa metodenya sama. Anda harus menggunakan rekayasa sosial untuk membuat korban menginstal APK di perangkat mereka. Bagian ini adalah sesuatu yang harus Anda lakukan sendiri. Terserah kreativitas Anda.</p>
+
+<p><br /></p>
+<h2 id="langkah-12">Langkah 12:</h2>
+<p>Anda telah berhasil meretas ponsel korban segera setelah mereka menginstal dan membukanya.</p>
+
+<p><br /></p>
+<h2 id="langkah-13">Langkah 13:</h2>
+<p>Anda tidak perlu menggunakan NOIP sebagai ganti alamat IP publik Anda saat membuat apk dan menyiapkan Metasploit. Namun masalahnya adalah alamat IP publik yang kadang-kadang berubah, sehingga penggunaan IP publik akan menjadi solusi sementara.</p>
+
+<h3 id="cari-di-google-whatsmyip-untuk-menemukan-alamat-ip-publik-anda">Cari di google “whatsmyIP” untuk menemukan alamat IP publik Anda</h3>
+
+<p><img src="https://myhackingworld.com/wp-content/uploads/2019/08/Screenshot-291.jpg" alt="noip" /></p>
+
+<p><br /></p>
+<h2 id="langkah-14">Langkah 14:</h2>
+<p>Jika Anda mengalami masalah dengan klien tanpa IP. Jangan gunakan sebaliknya, langsung gunakan IP publik Anda. Penerusan port diperlukan secara default pada semua metode peretasan melalui internet.</p>
+
+<p><br /></p>
+<h3 id="pertanyaan-umum-tentang-peretasan-dengan-metasploit-dan-msfvenom">Pertanyaan umum tentang peretasan dengan Metasploit dan msfvenom.</h3>
+
+<h3 id="q1-apakah-alat-peretasan-metasploit-dan-msfvenom-ini-legal">Q.1 Apakah alat peretasan Metasploit dan msfvenom ini legal?</h3>
+<p><b>Tidak.</b> Ini tidak dimaksudkan untuk meretas orang. Ini adalah alat yang dimaksudkan untuk <b>pentesting WhiteHat</b> saja dan harus digunakan dengan maksud yang sama. Kami(<a href="https://daffadev.my.id/">DaffaDev</a>) tidak bertanggung jawab apapun yang Anda lakukan atas penggunaan ilegal.</p>
+
+<h3 id="q2-tidak-berfungsi-apa-yang-harus-saya-lakukan">Q.2 Tidak berfungsi apa yang harus saya lakukan?</h3>
+<p>Nonaktifkan firewall dan antivirus dan kemudian semua langkah lagi. Pastikan Anda tidak membuat kesalahan pengetikan saat mengetik perintah.</p>
+
+<h3 id="q3-antivirus-saya-mendeteksinya-sebagai-virus-apakah-aman">Q.3 Antivirus saya mendeteksinya sebagai virus apakah aman?</h3>
+<p>File apk yang dibuat oleh msfvenom adalah virus yang dibuat oleh Anda jadi jelas kecuali Anda menggunakan aplikasi seperti kerangka cadar itu akan terdeteksi sebagai virus.</p>
+
+<h3 id="q4-saya-ingin-meretas-ponsel-pacar-saya-bagaimana-caranya">Q.4 Saya ingin meretas ponsel pacar saya bagaimana caranya?</h3>
+<p>Kami tidak mendukung peretasan <b>BlackHat</b>, dan kami tidak membalas dan menanggapi permintaan tersebut. Artikel ini dimaksudkan hanya untuk tujuan pendidikan.</p>
+
+<h3 id="q5-dapatkah-saya-menggunakan-kali-linux-dengan-di-ponsel-saya-untuk-menggunakan-hack-ini">Q.5 Dapatkah saya menggunakan kali Linux dengan di ponsel saya untuk menggunakan hack ini?</h3>
+<p><b>Ya</b>, Anda dapat menggunakan aplikasi termux, atau Anda dapat menggunakan nethunter kali Linux untuk meretas perangkat android dengan Metasploit dan msfvenom.</p>
+
+<h3 id="q6-saya-tidak-ingin-menggunakan-noip">Q.6 Saya tidak ingin menggunakan NOIP?</h3>
+<p>Anda dapat langsung menggunakan alamat IP publik Anda.</p>
+
+<h3 id="q7-apa-perbedaan-antara-alamat-ip-publik-dan-lokal">Q.7 Apa perbedaan antara alamat IP publik dan lokal?</h3>
+<p>IP publik adalah alamat yang Anda miliki di internet. Anda bisa google whatsmyIP untuk mengetahui IP publik Anda. IP lokal Anda adalah alamat IP sistem Anda di jaringan lokal. Gunakan ifconfig untuk Linux dan ipconfig untuk windows untuk mengetahui IP Anda.</p>
+:ET

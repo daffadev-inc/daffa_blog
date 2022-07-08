@@ -1,0 +1,57 @@
+I"ë
+<p>Menghubungkan GoodDollar ke Metamask umumnya diperlukan<!--more--> jika seseorang ingin bertransaksi di platform yang memerlukan conect wallet sehingga harus dibuka melalui browser DAPP Metamask.</p>
+
+<p>Selain itu, metode ini juga berguna bagi orang yang ingin memindah G$ ke wallet pribadinya. Karena sejauh ini pihak GoodDollar belum menyediakan menu transer ke wallet external.</p>
+
+<h3 id="1-persiapan">1. Persiapan</h3>
+<p>Panduan ini mengasumsikan:</p>
+<ol>
+  <li>Anda telah mendaftar GoodDollar, jika belum Anda bisa mendapatkannya disini <a href="https://gooddollarregistration.page.link/claimeveryday">wallet.gooddollar.org</a></li>
+  <li>Anda telah memiliki dompet metamask, jika belum silahkan buat <a href="https://metamask.io/download.html">disini</a>.</li>
+</ol>
+
+<h3 id="2-salin-private-key-gooddollar">2. Salin Private Key GoodDollar</h3>
+<ol>
+  <li>Login ke akun GoodDollar dan pilih menu Export Wallet.</li>
+  <li>Copy Private key untuk proses expor wallet ke metamask lalu simpan di tempat yang aman.</li>
+</ol>
+
+<h3 id="3-expor-kunci-pribadi-ke-metamask">3. Expor kunci pribadi ke metamask</h3>
+<p>Buka aplikasi Metamask. Panduan ini mengasumsikan Anda telah memiliki sebuah akun di Metamask. Jika belum silahkan buat terlebih dulu atau masuk ke wallet Anda dengan memasukan 12 Phrase dari Trust Wallet atau Safepal.
+Klik Impor Akun dan masukan Private key GoodDollar disana lalu pilih Done. Dengan begitu seharusnya wallet baru telah berhasil di Impor ke akun metamask Anda.</p>
+
+<h3 id="4-pindah-ke-jaringan-fuse-network">4. Pindah ke Jaringan Fuse Network</h3>
+<p>Sampai disini Anda masih belum bisa menambahkan token GoodDollar di wallet metamask karena masih berada di jaringan ETH. Silahkan ikuti step berikut untuk merubah jaringan Etherium ke FUSE Network.</p>
+
+<ol>
+  <li>Buka metamask dan pilih Pengaturan</li>
+  <li>Selanjutnya ini kolom yang muncul dengan isian berikut.
+    <ul>
+      <li>Nama Jaringan: FUSE NETWORK</li>
+      <li>Url RPC: https://rpc.fuse.io/</li>
+      <li>ID Rantai: 122</li>
+      <li>Simbol: FUSE</li>
+      <li>URL Block Explorer: https://explorer.fuse.io/</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Contoh pengisian dapat disesuaikan dengan gambar ini:
+<img src="/images/fuse.png" alt="metamask" /></p>
+
+<p>Dan hasilnya akan seperti gambar dibawah.</p>
+
+<p><img src="/images/fusetoken.png" alt="fusetoken" /></p>
+
+<p>Selanjutnya masukan Contract address berikut di kolom yang muncul.</p>
+
+<pre>Token Contract Address:<br />0x495d133B938596C9984d462F007B676bDc57eCEC</pre>
+
+<p>Contoh hasil pengisian kurang lebih seperti gambar berikut.</p>
+
+<p><img src="/images/gooddollar.png" alt="gooddollar" /></p>
+
+<p>Dengan mengikuti cara diatas kini wallet GoodDollar telah berhasil di impor ke metamask.
+<img src="/images/G$.png" alt="gdollar" /></p>
+
+:ET
