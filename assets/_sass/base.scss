@@ -46,3 +46,23 @@ pre {
     padding: 0 10px;
     width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 8px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $light; 
+  border-radius: 8px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: $dark; 
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
